@@ -1,0 +1,16 @@
+# Aliases for git
+alias gam="git commit --amend --no-edit"
+alias gp="git push"
+alias gdc="git diff --cached"
+alias glog="git log --oneline" 
+
+alias lg="lazygit"
+
+# Vim 
+alias vim="nvim"
+alias v="nvim ."
+
+# Utilities
+alias cls="clear"
+alias ls="eza"
+alias cat="bat"
