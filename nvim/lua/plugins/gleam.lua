@@ -14,4 +14,12 @@ return {
       require("lspconfig").gleam.setup({})
     end,
   },
+  {
+    "JoosepAlviste/nvim-ts-context-commentstring",
+    opts = {
+      languages = {
+        gleam = "// %s",
+      },
+    },
+  },
 }
