@@ -10,13 +10,18 @@ export EDITOR=nvim
 eval "$(starship init zsh)"
 
 
+# zoxide
+eval "$(zoxide init zsh)"
+
+# fzf
+if [ -f ~/.fzf.zsh ]; then
+    source ~/.fzf.zsh
+fi
+
 # Loading aliases 
 if [ -f ~/.aliases ]; then
     source ~/.aliases
 fi
-
-# zoxide
-eval "$(zoxide init zsh)"
 
 # At the end of your .zshrc import private stuff
 if [ -f ~/.zshrc_private ]; then
