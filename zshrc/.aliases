@@ -10,6 +10,11 @@ alias lg="lazygit"
 alias vim="nvim"
 alias v="nvim ."
 
+# gradle
+
+alias gb="./gradlew build"
+alias gkf="./gradlew ktlintFormat"
+
 # Utilities
 alias cls="clear"
 alias ls="eza"

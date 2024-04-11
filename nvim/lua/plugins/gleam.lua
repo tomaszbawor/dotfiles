@@ -11,7 +11,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     init = function()
-      require("lspconfig").gleam.setup({})
+      require("lspconfig").gleam.setup({ cmd == { "glas", "--stdio" } })
     end,
   },
   {
