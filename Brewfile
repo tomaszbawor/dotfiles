@@ -27,8 +27,7 @@ cask 'alfred'
 brew 'poetry'
 
 # Containers
-brew 'podman'
-cask 'podman-desktop'
+cask 'docker'
 
 # Http Client
 cask 'bruno'
