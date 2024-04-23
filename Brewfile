@@ -9,6 +9,9 @@ brew 'neovim'
 cask 'alacritty'
 cask 'authy'
 
+# Github
+cask "github"
+
 # Security
 cask '1password'
 cask '1password-cli'
