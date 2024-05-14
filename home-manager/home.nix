@@ -117,18 +117,11 @@
     enableZshIntegration = true;
   };
 
-
   # Git Configuration 
   programs.git = {
     enable = true;
     userName = "Tomasz Bawor";
     userEmail = "bawortomasz@gmail.com";
-  };
-
-
-  programs.zellij = {
-    enable = true;
-    enableZshIntegration = true;
   };
 
   programs.java = {
