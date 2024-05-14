@@ -43,7 +43,9 @@
   # plain files is through 'home.file'.
   home.file = {
     ".zshrc".source = ./../zshrc/zshrc-config;
-    ".config/nvim" = {source = ./../nvim; recursive = true;};
+    ".config/nvim" = { source = ./../nvim; recursive = true; };
+    ".config/nix/nix.conf".source = ./nix.conf;
+    ".config/zellij" = { source = ./../zellij; recursive = true; };
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
@@ -57,30 +59,41 @@
   };
 
   programs.zsh = {
+    enable = true;
+    autosuggestion.enable = true;
+    enableCompletion = true;
+    oh-my-zsh = {
       enable = true;
-      autosuggestion.enable = true;
-      enableCompletion = true;
-      oh-my-zsh = {
-        enable = true;
-        };
     };
+  };
 
   programs.fzf = {
-      enable = true;
-      enableZshIntegration = true;
-    };
+    enable = true;
+    enableZshIntegration = true;
+  };
 
-    programs.starship = {
-        enable = true;
-        enableZshIntegration = true;
-      };
-# Git Configuration 
+  programs.starship = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+  # Git Configuration 
   programs.git = {
-      enable = true;
-      userName = "Tomasz Bawor";
-      userEmail = "bawortomasz@gmail.com";
-      };
-      # Home Manager can also manage your environment variables through 'home.sessionVariables'. These will be explicitly sourced when using a shell provided by Home Manager. If you don't want to manage your shell through Home Manager then you have to manually source 'hm-session-vars.sh' located at either ~/.nix-profile/etc/profile.d/hm-session-vars.sh
+    enable = true;
+    userName = "Tomasz Bawor";
+    userEmail = "bawortomasz@gmail.com";
+  };
+
+
+  programs.zellij = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  programs.java = {
+    enable = true;
+    package = pkgs.jdk;
+  };
+  # Home Manager can also manage your environment variables through 'home.sessionVariables'. These will be explicitly sourced when using a shell provided by Home Manager. If you don't want to manage your shell through Home Manager then you have to manually source 'hm-session-vars.sh' located at either ~/.nix-profile/etc/profile.d/hm-session-vars.sh
   # or
   #
   #  ~/.local/state/nix/profiles/profile/etc/profile.d/hm-session-vars.sh
