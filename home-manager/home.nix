@@ -22,11 +22,20 @@
   # environment.
   home.packages = [
     pkgs.jq
+    pkgs.ripgrep
+    pkgs.bat
+    pkgs.eza
+    pkgs.diff-so-fancy
     pkgs.lazygit
     pkgs.zoxide
     pkgs.rustup
     pkgs.docker
     pkgs.obsidian
+    pkgs.nodejs_20
+    pkgs.slack
+    pkgs._1password-gui
+    pkgs.clockify
+    pkgs.bruno
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -78,6 +87,8 @@
     enable = true;
     enableZshIntegration = true;
   };
+
+
   # Git Configuration 
   programs.git = {
     enable = true;
