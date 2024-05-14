@@ -16,6 +16,7 @@
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
   targets.genericLinux.enable = true;
+  nixpkgs.config.allowUnfreePredicate = _: true;
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -25,6 +26,7 @@
     pkgs.zoxide
     pkgs.rustup
     pkgs.docker
+    pkgs.obsidian
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
