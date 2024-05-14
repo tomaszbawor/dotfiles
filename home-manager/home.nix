@@ -21,20 +21,32 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
+
+    # terminal tools
+    pkgs.nixpkgs-fmt
     pkgs.jq
     pkgs.ripgrep
     pkgs.bat
     pkgs.eza
+    pkgs.zoxide
+
+    # git
     pkgs.diff-so-fancy
     pkgs.lazygit
-    pkgs.zoxide
+
+    # programming
     pkgs.rustup
-    pkgs.obsidian
     pkgs.nodejs_20
+
+    # applications
     pkgs.slack
     pkgs._1password-gui
     pkgs.clockify
+    pkgs.obsidian
     pkgs.bruno
+
+    # fonts
+    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
