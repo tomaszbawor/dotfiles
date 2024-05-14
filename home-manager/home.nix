@@ -22,12 +22,12 @@
   xdg.mime.enable = true;
 
   home.activation = {
-      linkDesktopApplications = {
-          after = ["writeBoundary" "createXdgUserDirectories"];
-          before = [];
-          data = "/usr/bin/sudo /usr/bin/chmod -R 777 $HOME/.nix-profile/share/applications && /usr/bin/update-desktop-database $HOME/.nix-profile/share/applications";
-        };
+    linkDesktopApplications = {
+      after = [ "writeBoundary" "createXdgUserDirectories" ];
+      before = [ ];
+      data = "/usr/bin/sudo /usr/bin/chmod -R 777 $HOME/.nix-profile/share/applications && /usr/bin/update-desktop-database $HOME/.nix-profile/share/applications";
     };
+  };
 
 
   nixpkgs.config.allowUnfreePredicate = _: true;
@@ -143,7 +143,7 @@
   #  /etc/profiles/per-user/tomasz/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-     EDITOR = "nvim";
+    EDITOR = "nvim";
   };
 
 }
