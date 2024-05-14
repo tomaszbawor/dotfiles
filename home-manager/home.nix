@@ -29,7 +29,6 @@
     pkgs.lazygit
     pkgs.zoxide
     pkgs.rustup
-    pkgs.docker
     pkgs.obsidian
     pkgs.nodejs_20
     pkgs.slack
