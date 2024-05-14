@@ -15,6 +15,8 @@
   # release notes.
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
+  targets.genericLinux.enable = true;
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
@@ -53,6 +55,25 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
   };
+
+  programs.zsh = {
+      enable = true;
+      autosuggestion.enable = true;
+      enableCompletion = true;
+      oh-my-zsh = {
+        enable = true;
+        };
+    };
+
+  programs.fzf = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+
+    programs.starship = {
+        enable = true;
+        enableZshIntegration = true;
+      };
 # Git Configuration 
   programs.git = {
       enable = true;
