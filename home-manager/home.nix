@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 
 {
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "tomasz";
@@ -16,7 +19,22 @@
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
   targets.genericLinux.enable = true;
+  xdg.mime.enable = true;
+
+  home.activation = {
+      linkDesktopApplications = {
+          after = ["writeBoundary" "createXdgUserDirectories"];
+          before = [];
+          data = "/usr/bin/sudo /usr/bin/chmod -R 777 $HOME/.nix-profile/share/applications && /usr/bin/update-desktop-database $HOME/.nix-profile/share/applications";
+        };
+    };
+
+
   nixpkgs.config.allowUnfreePredicate = _: true;
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-25.9.0"
+    "electron-24.8.6"
+  ];
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -41,7 +59,6 @@
     # applications
     pkgs.slack
     pkgs._1password-gui
-    pkgs.clockify
     pkgs.obsidian
     pkgs.bruno
 
@@ -82,7 +99,6 @@
 
   programs.zsh = {
     enable = true;
-    autosuggestion.enable = true;
     enableCompletion = true;
     oh-my-zsh = {
       enable = true;
@@ -127,9 +143,7 @@
   #  /etc/profiles/per-user/tomasz/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+     EDITOR = "nvim";
   };
 
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
 }
