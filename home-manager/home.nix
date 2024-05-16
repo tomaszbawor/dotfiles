@@ -29,14 +29,16 @@
     };
   };
 
+  nixpkgs.config = {
+    allowUnfreePredicate = _: true;
+    permittedInsecurePackages = [
+      "electron-25.9.0"
+      "electron-24.8.6"
+    ];
+  };
 
-  nixpkgs.config.allowUnfreePredicate = _: true;
 
-  # Electron EOL
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-25.9.0"
-    "electron-24.8.6"
-  ];
+
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -48,7 +50,6 @@
     pkgs.ripgrep
     pkgs.bat
     pkgs.eza
-    pkgs.zoxide
 
     # git
     pkgs.diff-so-fancy
@@ -83,7 +84,7 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-    ".zshrc".source = ./../zshrc/zshrc-config;
+    # ".zshrc".source = ./../zshrc/zshrc-config;
     ".config/nvim" = { source = ./../nvim; recursive = true; };
     ".config/nix/nix.conf".source = ./nix.conf;
     ".config/zellij" = { source = ./../zellij; recursive = true; };
@@ -105,7 +106,17 @@
     oh-my-zsh = {
       enable = true;
     };
+    shellAliases = {
+      ls = "eza";
+      cat = "bat";
+      lg = "lazygit";
+    };
   };
+
+  programs.zoxide = {
+      enable = true;
+      enableZshIntegration = true;
+    };
 
   programs.fzf = {
     enable = true;
