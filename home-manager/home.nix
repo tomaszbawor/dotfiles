@@ -110,13 +110,23 @@
       ls = "eza";
       cat = "bat";
       lg = "lazygit";
+
+      vim = "nvim";
+      v = "nvim .";
+      # Git 
+      gdc = "git diff --cached";
+      glog = "git log --oneline";
+
+      # Gradle
+      gb = "./gradlew build";
+      gkf = "./gradlew ktlintFormat";
     };
   };
 
   programs.zoxide = {
-      enable = true;
-      enableZshIntegration = true;
-    };
+    enable = true;
+    enableZshIntegration = true;
+  };
 
   programs.fzf = {
     enable = true;
