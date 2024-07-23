@@ -25,6 +25,7 @@ cask 'obsidian'
 # Macos Tools
 cask 'rectangle'
 cask 'alfred'
+cask 'vmware-horizon-client'
 
 # Python 
 brew 'poetry'
